@@ -43,7 +43,7 @@ int main() {
     int32_t C;
     int32_t a1;
     int32_t a2;
-
+    cout << "\n" << "Enter the elements number" << "\n";
     cin >> elements_number;
 
     if (elements_number <= 1) {
