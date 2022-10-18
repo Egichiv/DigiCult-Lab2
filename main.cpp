@@ -4,32 +4,34 @@
 using std::cin;
 using std::cout;
 
-int partition(int32_t* array, int left, int right) {
-    int v = array[(left + right) / 2];
+void k_statistic (int32_t* array, int left, int right, int position) {
+    int32_t v = array[(left + right) / 2];
     int i = left;
     int j = right;
+
     while (i <= j) {
+
         while (array[i] < v) {
             i++;
         }
+
         while (array[j] > v) {
             j--;
         }
-        if (i >= j) {
-            break;
-        }
-        int32_t temp = array[i];
-        array[i++] = array[j--];
-        array[j + 1] = temp;
-    }
-    return j;
-}
 
-void quick_sort (int32_t* array, int left, int right) {
-    if (left < right) {
-        int pivot = partition (array, left, right);
-        quick_sort (array, left, pivot);
-        quick_sort (array, pivot + 1, right);
+        if (i <= j) {
+            int32_t temp = array[i];
+            array[i++] = array[j--];
+            array[j + 1] = temp;
+        }
+    }
+
+    if ((j > left) && (position <= j)) {
+        k_statistic(array, left, j, position);
+    }
+
+    if ((i < right) && (position >= j)) {
+        k_statistic(array, j + 1, right, position);
     }
 }
 
