@@ -43,7 +43,7 @@ int main() {
     int32_t C;
     int32_t a1;
     int32_t a2;
-
+    cout << "\n" << "Have a nice day! Also enter the needed numbers." << "\n";
     cin >> elements_number >> position >> A >> B >> C >> a1 >> a2;
 
     array = (int32_t*) calloc(elements_number, sizeof(int32_t));
