@@ -51,6 +51,8 @@ int main() {
     }
 
     cin >> position >> A >> B >> C >> a1 >> a2;
+    cout << "\n" << "Have a nice day! Also enter the needed numbers." << "\n";
+    cin >> elements_number >> position >> A >> B >> C >> a1 >> a2;
 
     array = (int32_t*) calloc(elements_number, sizeof(int32_t));
 
